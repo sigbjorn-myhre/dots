@@ -1,0 +1,81 @@
+import = [
+  # "/Users/sig/.config/alacritty/themes/themes/tokyo-night.toml"
+  "/Users/sig/.config/alacritty/themes/themes/ayu_dark.toml"
+]
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[[keyboard.bindings]]
+chars = "["
+key = "LBracket"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "]"
+key = "RBracket"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "{"
+key = "Key8"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+chars = "}"
+key = "Key9"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+chars = '\'
+key = "Backslash"
+mods = "Alt|Shift"
+
+[scrolling]
+history = 5000
+
+[window]
+decorations = "full"
+dynamic_padding = true
+opacity = 0.999
+option_as_alt = "OnlyRight"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 120
+lines = 60
+
+[window.padding]
+x = 4
+y = 4
