@@ -1,0 +1,73 @@
+[language-server.unison-nc]
+command = "nc"
+args = ["localhost", "5757"]
+
+[[language]]
+name = "unison"
+scope = "source.unison"
+injection-regex = "unison"
+file-types = ["u"]
+shebangs = []
+roots = []
+auto-format = false
+comment-token = "--"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [
+  { name = "unison-nc" }
+]
+
+[language-server.roc_ls]
+command = "roc_ls"
+
+[[language]]
+name = "roc"
+scope = "main.roc"
+file-types = ["roc"]
+shebangs = []
+roots = []
+auto-format = false
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [
+  { name = "roc_ls" }
+]
+
+[language-server.efm-prettier]
+command = "efm-langserver"
+config.documentFormatting = true
+config.languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } ] }
+
+[language-server.efm]
+command = "efm-langserver"
+config.documentFormatting = true
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+config.hostInfo = "helix"
+
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = [
+  { name = "efm", only-features = ["diagnostics"] },
+  { name = "efm-prettier", only-features = ["format"] },
+  { name = "typescript-language-server", except-features = ["format", "diagnostics"] },
+]
+
+[language-server.fsharp-language-server]
+# command = "fsharplsp"
+command = "/Users/sig/git/fsharp-language-server/src/FSharpLanguageServer/bin/Release/net6.0/FSharpLanguageServer"
+
+[language-server.fs-auto-complete]
+command = "dotnet tool fsautocomplete"
+
+[[language]]
+name = "fsharp"
+auto-format = true
+roots = []
+# roots = [ "*.fsproj", "*.fsx", ".git" ]
+language-servers = [
+  { name = "fsharp-language-server" },
+  # { name = "fs-auto-complete" },
+]
