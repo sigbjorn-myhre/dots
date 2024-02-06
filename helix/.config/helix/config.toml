@@ -37,7 +37,11 @@ skip-levels = 1
 "f" = "file_picker"
 "space" = "file_picker"
 #"space" = "buffer_picker"
-# "t" = "theme_picker"
+"." = "command_mode"
+
+#[keys.normal.space."c"]
+#"o" = ":config_open"
+#"r" = ":config_reload"
 
 [keys.normal]
 "C-space" = "expand_selection"
