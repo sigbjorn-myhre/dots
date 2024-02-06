@@ -39,9 +39,9 @@ skip-levels = 1
 #"space" = "buffer_picker"
 "." = "command_mode"
 
-#[keys.normal.space."c"]
-#"o" = ":config_open"
-#"r" = ":config_reload"
+[keys.normal.space."c"]
+"o" = ":config-open"
+"r" = ":config-reload"
 
 [keys.normal]
 "C-space" = "expand_selection"
