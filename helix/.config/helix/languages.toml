@@ -32,14 +32,32 @@ language-servers = [
   { name = "roc_ls" }
 ]
 
-[language-server.efm-prettier]
-command = "efm-langserver"
-config.documentFormatting = true
-config.languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } ] }
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
 
-[language-server.efm]
-command = "efm-langserver"
-config.documentFormatting = true
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]
+
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
 
 [language-server.typescript-language-server]
 command = "typescript-language-server"
@@ -48,12 +66,36 @@ config.hostInfo = "helix"
 
 [[language]]
 name = "typescript"
-auto-format = true
 language-servers = [
-  { name = "efm", only-features = ["diagnostics"] },
-  { name = "efm-prettier", only-features = ["format"] },
-  { name = "typescript-language-server", except-features = ["format", "diagnostics"] },
+  "typescript-language-server",
+  "emmet-ls",
+  "eslint"
 ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [
+  "typescript-language-server",
+  "emmet-ls",
+  "tailwindcss-ls",
+  "eslint"
+]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [ "typescript-language-server", "emmet-ls", "eslint" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "emmet-ls", "tailwindcss-ls", "eslint" ]
+formatter = { command = "prettier", args = [ "--parser", "jsx" ] }
+auto-format = true
 
 [language-server.fsharp-language-server]
 # command = "fsharplsp"
@@ -70,4 +112,13 @@ roots = []
 language-servers = [
   { name = "fsharp-language-server" },
   # { name = "fs-auto-complete" },
+]
+
+[language-server.postgres-lsp]
+command = "postgres_lsp"
+
+[[language]]
+name = "sql"
+language-servers = [
+  { name = "postgres-lsp" }
 ]
