@@ -1,5 +1,4 @@
-set -gx PATH /Users/sig/.local/bin $PATH
-set -gx PATH /opt/homebrew/bin $PATH
+set -gx XDG_CONFIG_HOME /Users/sig/.config
 
 zoxide init --cmd j fish | source
 
