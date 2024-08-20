@@ -3,9 +3,12 @@ theme = "kaolin-dark"
 [editor]
 cursorline = true
 color-modes = true
-auto-save = true
 rulers = [120]
 auto-pairs = false
+mouse = true
+
+[editor.auto-save]
+focus-lost = true
 
 [editor.cursor-shape]
 insert = "block"
