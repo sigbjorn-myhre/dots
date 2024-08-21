@@ -49,15 +49,10 @@ wrap-indicator = "↩ "
 # "space" = "file_picker"
 "space" = "buffer_picker"
 "." = "command_mode"
-"v" = ":sh hemux-last"
 
 [keys.normal.space."c"]
 "o" = ":config-open"
 "r" = ":config-reload"
-
-[keys.normal.space."t"]
-"l" = ":theme ayu_light"
-"d" = ":theme ayu_evolve"
 
 [keys.normal.space."b"]
 "r" = ":rl"
