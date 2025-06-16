@@ -1,0 +1,55 @@
+# Looks
+cursor-style = block
+cursor-style-blink = false
+
+shell-integration = fish
+shell-integration-features = no-cursor
+
+# theme = dark:ayu,light:flexoki-light
+theme = dark:ayu,light:nord
+
+font-family = "Monaco"
+font-thicken = true
+font-thicken-strength = 64
+
+# Global binds
+keybind = global:cmd+period=toggle_quick_terminal
+# keybind = cmd+comma=new_split:right>text:$EDITOR $XDG_CONFIG_HOME/ghostty/config
+
+# Splits
+keybind = super+shift+enter=toggle_split_zoom
+
+keybind = super+s>h=goto_split:left
+keybind = super+s>j=goto_split:bottom
+keybind = super+s>k=goto_split:top
+keybind = super+s>l=goto_split:right
+
+keybind = super+s>super+h=goto_split:left
+keybind = super+s>super+j=goto_split:bottom
+keybind = super+s>super+k=goto_split:top
+keybind = super+s>super+l=goto_split:right
+
+keybind = shift+alt+h=goto_split:left
+keybind = shift+alt+j=goto_split:bottom
+keybind = shift+alt+k=goto_split:top
+keybind = shift+alt+l=goto_split:right
+
+keybind = super+s>shift+h=new_split:left
+keybind = super+s>shift+j=new_split:down
+keybind = super+s>shift+k=new_split:up
+keybind = super+s>shift+l=new_split:right
+
+keybind = super+s>super+shift+h=new_split:left
+keybind = super+s>super+shift+j=new_split:down
+keybind = super+s>super+shift+k=new_split:up
+keybind = super+s>super+shift+l=new_split:right
+
+keybind = shift+super+h=new_split:left
+keybind = shift+super+j=new_split:down
+keybind = shift+super+k=new_split:up
+keybind = shift+super+l=new_split:right
+
+keybind = super+s>ctrl+h=resize_split:left,10
+keybind = super+s>ctrl+j=resize_split:down,10
+keybind = super+s>ctrl+k=resize_split:up,10
+keybind = super+s>ctrl+l=resize_split:right,10
