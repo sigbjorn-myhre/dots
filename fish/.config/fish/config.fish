@@ -1,4 +1,7 @@
-set -gx XDG_CONFIG_HOME /Users/sig/.config
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx EDITOR hx
+
+fish_add_path $HOME/.local/bin/
 
 fzf --fish | source
 
