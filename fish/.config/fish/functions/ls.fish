@@ -1,3 +1,3 @@
-function ls --wraps=ls
-	command ls -lah -G $argv
+function ls --wraps=eza
+    command eza -lah --icons --group-directories-first --no-user $argv
 end
